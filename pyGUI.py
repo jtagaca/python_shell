@@ -4,11 +4,11 @@ import os. path
 file_list_column = [
     [
 
-        sg.Text("Image Folder"), sg.In(size=(25, 1),
-                                       enable_events=True, key="-FOLDER-")],
+        sg.Text("Input"), sg.In(size=(25, 1),
+                                enable_events=True, key="-FOLDER-")],
     [
-        sg.Listbox(
-            values=[], enable_events=True, size=(40, 20), key="-FILE LIST-")
+        sg.Button('SEND', button_color=(
+            sg.YELLOWS[0], sg.BLUES[0]), bind_return_key=True)
     ]
 ]
 
@@ -30,6 +30,8 @@ while True:
     if event == "Exit" or event == sg.WIN_CLOSED:
         break
 
+    if event == "SEND":
+        textInput = event[""]
         # this is how we check for an event
     if event == "-FOLDER-":
         folder = values["-FOLDER-"]
