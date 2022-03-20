@@ -24,9 +24,13 @@ import subprocess
 
 # this will work as long as we are in the sudoers file
 
-sudoPassword = "1"
-command = "vi /etc/sudoers"
-os.system('echo %s|sudo -S %s' % (sudoPassword, command))
+sudoPassword = '1'
+command = "su root"
+# os.system('sudo -S %s' % (command))
+
+
+p1 = run('cd /etc', capture_output=True, shell=True,  text=True)
+# print(p1.stdout)
 
 
 # cmd1 = subprocess.Popen(['echo', sudo_password], stdout=subprocess.PIPE)
